@@ -1,18 +1,30 @@
-<?php 
+<?php
 
-class Mahasiswa_model {
+class Mahasiswa_model
+{
     private $table = 'mahasiswa';
     private $db;
 
     public function __construct()
     {
-        $this->db = new Database;
+        // $this->db = new Database;
     }
 
     public function getAllMahasiswa()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
-        return $this->db->resultSet();
+        $url = "http://localhost:3000/api/users";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+
+        $result = json_decode($response, true);
+
+        curl_close($ch);
+
+        // var_dump($result);
+        // $this->db->query('SELECT * FROM ' . $this->table);
+        // return $this->db->resultSet();
+        return $result;
     }
 
     public function getMahasiswaById($id)
@@ -27,7 +39,7 @@ class Mahasiswa_model {
         $query = "INSERT INTO mahasiswa
                     VALUES
                   ('', :nama, :nrp, :email, :jurusan)";
-        
+
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('nrp', $data['nrp']);
@@ -42,7 +54,7 @@ class Mahasiswa_model {
     public function hapusDataMahasiswa($id)
     {
         $query = "DELETE FROM mahasiswa WHERE id = :id";
-        
+
         $this->db->query($query);
         $this->db->bind('id', $id);
 
@@ -60,7 +72,7 @@ class Mahasiswa_model {
                     email = :email,
                     jurusan = :jurusan
                   WHERE id = :id";
-        
+
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('nrp', $data['nrp']);
@@ -82,5 +94,4 @@ class Mahasiswa_model {
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();
     }
-
 }
