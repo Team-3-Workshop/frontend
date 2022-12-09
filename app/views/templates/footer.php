@@ -1,6 +1,25 @@
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="<?= BASEURL; ?>/js/bootstrap.js"></script>
-<script src="<?= BASEURL; ?>/js/script.js"></script>
-</body>
-</html>
+      <footer>
+          <div class="footer clearfix mb-0 text-muted">
+              <div class="float-start">
+                  <p>2021 &copy; Mazer</p>
+              </div>
+              <div class="float-end">
+                  <p>
+                      Crafted with
+                      <span class="text-danger"><i class="bi bi-heart"></i></span> by
+                      <a href="https://saugi.me">Saugi</a>
+                  </p>
+              </div>
+          </div>
+      </footer>
+      </div>
+      </div>
+      <script src="<?= BASEURL; ?>/js/bootstrap.js"></script>
+      <script src="<?= BASEURL; ?>/js/app.js"></script>
+
+      <!-- Need: Apexcharts -->
+      <script src="<?= BASEURL; ?>/extensions/apexcharts/apexcharts.min.js"></script>
+      <script src="<?= BASEURL; ?>/js/pages/dashboard.js"></script>
+      </body>
+
+      </html>
