@@ -2,11 +2,6 @@
 
 class userModel
 {
-    public function __construct()
-    {
-        // $this->db = new Database;
-    }
-
     public function get()
     {
         $url = "http://localhost:3000/api/users/";
@@ -29,7 +24,6 @@ class userModel
         $response = curl_exec($ch);
 
         $result = json_decode($response, true);
-        // var_dump($result);
 
         curl_close($ch);
 
@@ -46,7 +40,6 @@ class userModel
         $response = curl_exec($ch);
 
         $result = json_decode($response, true);
-        // var_dump($result);
 
         curl_close($ch);
 
@@ -54,7 +47,7 @@ class userModel
     }
 
 
-    public function ubahDataMahasiswa($data)
+    public function update($data)
     {
         $query = "UPDATE mahasiswa SET
                     nama = :nama,
@@ -76,7 +69,7 @@ class userModel
     }
 
 
-    public function cariDataMahasiswa()
+    public function search()
     {
         $keyword = $_POST['keyword'];
         $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";

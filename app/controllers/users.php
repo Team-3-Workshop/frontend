@@ -1,10 +1,10 @@
 <?php
 
-class user extends Controller
+class users extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Storiatour - User';
+        $data['title'] = 'Storiatour - Users';
         $data['active'] = 'user';
         $data['users'] = $this->model('userModel')->get();
         $this->view('templates/header', $data);
@@ -17,7 +17,6 @@ class user extends Controller
         $data['title'] = 'Storiatour - User';
         $data['active'] = 'user';
         $data['user'] = $this->model('userModel')->find($id);
-        die;
         $this->view('templates/header', $data);
         $this->view('user/detail', $data);
         $this->view('templates/footer');
@@ -26,8 +25,6 @@ class user extends Controller
     public function delete($id)
     {
         $data = $this->model('userModel')->drop($id);
-        // var_dump($data);
-        // die;
 
         if ($data['success'] == true) {
             Flasher::setFlash($data['message'], 'success');

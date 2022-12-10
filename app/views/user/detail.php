@@ -15,7 +15,7 @@ $user = $data['user']['data'];
       <div class="col-12 col-md-6 order-md-2 order-first">
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/user">User</a></li>
+            <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/users">User</a></li>
             <li class="breadcrumb-item active" aria-current="page">Detail</li>
           </ol>
         </nav>
@@ -26,7 +26,7 @@ $user = $data['user']['data'];
   <section id="content-types">
     <div class="row">
       <div class="col-md-10 col-sm-12">
-        <div class="card">
+        <div class="card shadow rounded">
           <div class="row g-0">
             <div class="col-md-4">
               <img class="img-fluid rounded-start" src="<?= BASEURL; ?>/images/samples/water.jpg" alt="Card image cap" style="height: 100%; object-fit: cover;">

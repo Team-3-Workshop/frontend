@@ -20,7 +20,7 @@
   <section class="section">
     <div class="row" id="table-hover-row">
       <div class="col-12">
-        <div class="card">
+        <div class="card shadow rounded">
           <!-- table hover -->
           <div class="table-responsive">
             <table class="table table-hover mb-0">
@@ -37,13 +37,13 @@
               <tbody>
                 <?php foreach ($data['users']['data'] as $user) : ?>
                   <tr>
-                    <td><a class="fw-semibold text-white" href="<?= BASEURL; ?>/user/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
+                    <td><a class="fw-semibold" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
                     <td><?= $user['email']; ?></td>
                     <td><?= $user['phone']; ?></td>
                     <td><?= $user['citizen']; ?></td>
                     <td><?= $user['address']; ?></td>
                     <td>
-                      <a href="<?= BASEURL; ?>/user/delete/<?= $user['id']; ?>"><i class="bi bi-trash3-fill"></i></a>
+                      <a href="<?= BASEURL; ?>/users/delete/<?= $user['id']; ?>"><i class="bi bi-trash3-fill"></i></a>
                     </td>
                   </tr>
                 <?php endforeach ?>
