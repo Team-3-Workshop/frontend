@@ -5,8 +5,9 @@ class user extends Controller
     public function index()
     {
         $data['title'] = 'User List';
-        $data['userTab'] = 'active';
-        $data['user'] = $this->model('userModel')->getAllMahasiswa();
+        $data['active'] = 'user';
+        $data['users'] = $this->model('userModel')->getUsers();
+        // var_dump($data);
         $this->view('templates/header', $data);
         $this->view('user/index', $data);
         $this->view('templates/footer');
@@ -14,10 +15,11 @@ class user extends Controller
 
     public function detail($id)
     {
-        $data['judul'] = 'Detail Mahasiswa';
-        $data['mhs'] = $this->model('Mahasiswa_model')->getMahasiswaById($id);
+        $data['title'] = 'Detail Mahasiswa';
+        $data['active'] = 'user';
+        $data['user'] = $this->model('userModel')->getUser($id);
         $this->view('templates/header', $data);
-        $this->view('mahasiswa/detail', $data);
+        $this->view('user/detail', $data);
         $this->view('templates/footer');
     }
 

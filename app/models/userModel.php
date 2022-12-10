@@ -2,17 +2,14 @@
 
 class userModel
 {
-    private $table = 'mahasiswa';
-    private $db;
-
     public function __construct()
     {
         // $this->db = new Database;
     }
 
-    public function getAllMahasiswa()
+    public function getUsers()
     {
-        $url = "http://localhost:3000/api/users";
+        $url = "http://localhost:3000/api/users/";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
@@ -21,17 +18,21 @@ class userModel
 
         curl_close($ch);
 
-        // var_dump($result);
-        // $this->db->query('SELECT * FROM ' . $this->table);
-        // return $this->db->resultSet();
         return $result;
     }
 
-    public function getMahasiswaById($id)
+    public function getUser($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id', $id);
-        return $this->db->single();
+        $url = "http://localhost:3000/api/users/" . $id;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+
+        $result = json_decode($response, true);
+
+        curl_close($ch);
+
+        return $result;
     }
 
     public function tambahDataMahasiswa($data)

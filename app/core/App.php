@@ -13,7 +13,6 @@ class App
         // controller
         if (file_exists('../app/controllers/' . $url[0] . '.php')) {
             $this->controller = $url[0];
-            var_dump($this->controller);
             unset($url[0]);
         }
 

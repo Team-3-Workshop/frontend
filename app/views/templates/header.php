@@ -51,10 +51,17 @@
           <ul class="menu">
             <li class="sidebar-title">Menu</li>
 
-            <li class="sidebar-item <?= $data['userTab']; ?>">
-              <a href="index.html" class="sidebar-link">
+            <li class="sidebar-item <?= ($data['active'] === "dashboard") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/user" class="sidebar-link">
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "user") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/user" class="sidebar-link">
+                <i class="bi bi-people-fill"></i>
+                <span>User</span>
               </a>
             </li>
 

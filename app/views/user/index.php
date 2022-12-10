@@ -8,7 +8,7 @@
       <div class="col-12 col-md-6 order-md-2 order-first">
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/dashboard">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">User</li>
           </ol>
         </nav>
@@ -34,9 +34,9 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data['user']['data'] as $user) : ?>
+                <?php foreach ($data['users']['data'] as $user) : ?>
                   <tr>
-                    <td><?= $user['fullName']; ?></td>
+                    <td><a href="<?= BASEURL; ?>/user/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
                     <td><?= $user['email']; ?></td>
                     <td><?= $user['phone']; ?></td>
                     <td><?= $user['citizen']; ?></td>

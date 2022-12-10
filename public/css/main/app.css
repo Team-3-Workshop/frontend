@@ -77,7 +77,7 @@
   font-weight: 400;
   src: url(../../../public/fonts/vendor/@fontsource/nunito/files/nunito-cyrillic-400-normal.woff2?a0473b5006c28d8a449913aaab9e225d)
       format("woff2"),
-    url(../../../assets/fonts/vendor/@fontsource/nunito/files/nunito-all-400-normal.woff?8f2fc6317388452f7ad144ea0cdb853e)
+    url(../../../public/fonts/vendor/@fontsource/nunito/files/nunito-all-400-normal.woff?8f2fc6317388452f7ad144ea0cdb853e)
       format("woff");
   unicode-range: u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
 }
@@ -137,7 +137,7 @@
   font-weight: 600;
   src: url(../../../public/fonts/vendor/@fontsource/nunito/files/nunito-cyrillic-600-normal.woff2?1dd32244f44e3237f333f099fbb9e7b5)
       format("woff2"),
-    url(../../../assets/fonts/vendor/@fontsource/nunito/files/nunito-all-600-normal.woff?c98d6b1e33b1d5275530ae9cad92dc09)
+    url(../../../public/fonts/vendor/@fontsource/nunito/files/nunito-all-600-normal.woff?c98d6b1e33b1d5275530ae9cad92dc09)
       format("woff");
   unicode-range: u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
 }
@@ -10807,9 +10807,9 @@ fieldset:disabled .btn {
 @font-face {
   font-display: block;
   font-family: bootstrap-icons;
-  src: url(../../../assets/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?ea98e12d2d58747f9fc557577a85042e)
+  src: url(../../../public/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?ea98e12d2d58747f9fc557577a85042e)
       format("woff2"),
-    url(../../../assets/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?e559bf06bc84fd9525e61ead369f2a7e)
+    url(../../../public/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?e559bf06bc84fd9525e61ead369f2a7e)
       format("woff");
 }
 .bi:before,
