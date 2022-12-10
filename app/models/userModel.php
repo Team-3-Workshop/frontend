@@ -7,7 +7,7 @@ class userModel
         // $this->db = new Database;
     }
 
-    public function getUsers()
+    public function get()
     {
         $url = "http://localhost:3000/api/users/";
         $ch = curl_init($url);
@@ -21,7 +21,7 @@ class userModel
         return $result;
     }
 
-    public function getUser($id)
+    public function find($id)
     {
         $url = "http://localhost:3000/api/users/" . $id;
         $ch = curl_init($url);
@@ -29,39 +29,28 @@ class userModel
         $response = curl_exec($ch);
 
         $result = json_decode($response, true);
+        // var_dump($result);
 
         curl_close($ch);
 
         return $result;
     }
 
-    public function tambahDataMahasiswa($data)
+    public function drop($id)
     {
-        $query = "INSERT INTO mahasiswa
-                    VALUES
-                  ('', :nama, :nrp, :email, :jurusan)";
+        $url = "localhost:3000/api/users/" . $id;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
 
-        $this->db->query($query);
-        $this->db->bind('nama', $data['nama']);
-        $this->db->bind('nrp', $data['nrp']);
-        $this->db->bind('email', $data['email']);
-        $this->db->bind('jurusan', $data['jurusan']);
+        $result = json_decode($response, true);
+        // var_dump($result);
 
-        $this->db->execute();
+        curl_close($ch);
 
-        return $this->db->rowCount();
-    }
-
-    public function hapusDataMahasiswa($id)
-    {
-        $query = "DELETE FROM mahasiswa WHERE id = :id";
-
-        $this->db->query($query);
-        $this->db->bind('id', $id);
-
-        $this->db->execute();
-
-        return $this->db->rowCount();
+        return $result;
     }
 
 
