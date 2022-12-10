@@ -60,7 +60,7 @@
 
             <li class="sidebar-item <?= ($data['active'] === "user") ? 'active' : '' ?>">
               <a href="<?= BASEURL; ?>/users" class="sidebar-link">
-                <i class="bi bi-people-fill"></i>
+                <i class="bi bi-people"></i>
                 <span>User</span>
               </a>
             </li>

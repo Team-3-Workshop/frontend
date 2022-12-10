@@ -28,11 +28,11 @@ class users extends Controller
 
         if ($data['success'] == true) {
             Flasher::setFlash($data['message'], 'success');
-            header('Location: ' . BASEURL . '/user');
+            header('Location: ' . BASEURL . '/users');
             exit;
         } else {
             Flasher::setFlash($data['message'], 'danger');
-            header('Location: ' . BASEURL . '/user');
+            header('Location: ' . BASEURL . '/users');
             exit;
         }
     }
