@@ -22,6 +22,7 @@
             </div>
         </div>
     </div>
+    <?php Flasher::flash(); ?>
     <!-- Basic card section start -->
     <section id="content-types">
         <div class="row">
@@ -32,6 +33,7 @@
                             <img class="card-img-top img-fluid" src="<?= BASEURL; ?>/images/samples/origami.jpg" alt="Card image cap" style="height: 20rem" />
                             <div class="card-body">
                                 <h4 class="card-title"><?= $hotel['name']; ?></h4>
+                                <h6 class="card-subtitle mb-3 text-muted"><?= $hotel['address']; ?></h6>
                                 <p class="card-text text-wrap">
                                     <?= $hotel['description']; ?>
                                 </p>

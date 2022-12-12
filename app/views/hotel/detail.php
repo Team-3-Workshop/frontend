@@ -33,10 +33,20 @@ $hotel = $data['hotel']['data'];
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h4 class="card-title mb-4"><?= $hotel['name']; ?></h4>
+                                <h4 class="card-title mb-2"><?= $hotel['name']; ?></h4>
+                                <h6 class="card-subtitle mb-4 text-muted"><?= $hotel['address']; ?></h6>
 
                                 <div class="row mb-2">
                                     <p><?= $hotel['description']; ?></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 d-flex">
+                                        <a href="<?= BASEURL; ?>/hotels" class="align-self-center">Kembali</a>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <a href="<?= BASEURL; ?>/hotels/delete/<?= $hotel['id']; ?>" class="btn btn-danger px-3 me-2">Hapus</a>
+                                        <a href="<?= BASEURL; ?>/hotels/edit/<?= $hotel['id']; ?>" class="btn btn-primary px-4">Edit</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

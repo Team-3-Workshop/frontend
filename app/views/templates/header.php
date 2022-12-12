@@ -11,6 +11,9 @@
   <link rel="shortcut icon" href="<?= BASEURL; ?>/images/logo/favicon.svg" type="image/x-icon" />
   <link rel="shortcut icon" href="<?= BASEURL; ?>/images/logo/favicon.png" type="image/png" />
 
+  <link rel="stylesheet" href="<?= BASEURL; ?>/extensions/quill/quill.snow.css">
+  <link rel="stylesheet" href="<?= BASEURL; ?>/extensions/quill/quill.bubble.css">
+
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/shared/iconly.css" />
 </head>
 
