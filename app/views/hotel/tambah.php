@@ -34,6 +34,12 @@
                                             <input type="text" id="first-name" class="form-control" name="name">
                                         </div>
                                         <div class="col-md-4">
+                                            <label>Alamat Hotel</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <input type="text" id="first-name" class="form-control" name="address">
+                                        </div>
+                                        <div class="col-md-4">
                                             <label>Deskripsi Hotel</label>
                                         </div>
                                         <div class="col-md-8 form-group">

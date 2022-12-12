@@ -48,12 +48,11 @@ class hotelModel
 
     public function add()
     {
-        var_dump($_POST);
-        die;
         $url = "http://localhost:3000/api/hotels";
 
         $fields = [
             'name' => $_POST['name'],
+            'address' => $_POST['address'],
             'description' => $_POST['description'],
         ];
 
@@ -89,11 +88,11 @@ class hotelModel
     {
         $fields = [
             "name" => $_POST['name'],
+            "address" => $_POST['address'],
             "description" => $_POST['description'],
         ];
 
         $url = "localhost:3000/api/hotels/" . $_POST['id'];
-        // var_dump($url);
 
         $post = json_encode($fields, true);
 
