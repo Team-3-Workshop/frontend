@@ -9,7 +9,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Detail</li>
+                        <li class="breadcrumb-item active" aria-current="page">Hotel</li>
                     </ol>
                 </nav>
             </div>

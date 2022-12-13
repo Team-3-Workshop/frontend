@@ -74,6 +74,13 @@
                 <span>Hotel</span>
               </a>
             </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "transportation") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/transportations" class="sidebar-link">
+                <i class="bi bi-train-front"></i>
+                <span>Transportation</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
