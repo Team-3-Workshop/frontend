@@ -47,6 +47,22 @@ class transportationModel
         return $result;
     }
 
+    public function drop($id)
+    {
+        $url = "localhost:3000/api/transportations/" . $id;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+
+        $result = json_decode($response, true);
+
+        curl_close($ch);
+
+        return $result;
+    }
+
     public function change()
     {
         $id = $_POST['id'];

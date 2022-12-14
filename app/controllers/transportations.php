@@ -42,6 +42,21 @@ class transportations extends Controller
         $this->view('templates/footer');
     }
 
+    public function delete($id)
+    {
+        $data = $this->model('transportationModel')->drop($id);
+
+        if ($data['success'] == true) {
+            Flasher::setFlash($data['message'], 'success');
+            header('Location: ' . BASEURL . '/transportations');
+            exit;
+        } else {
+            Flasher::setFlash($data['message'], 'danger');
+            header('Location: ' . BASEURL . '/transportations');
+            exit;
+        }
+    }
+
     public function update()
     {
         $this->model('transportationModel')->change();
