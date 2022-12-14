@@ -47,25 +47,18 @@ class users extends Controller
         }
     }
 
-    public function update()
+    public function edit($id)
     {
-        if ($this->model('Mahasiswa_model')->ubahDataMahasiswa($_POST) > 0) {
-            Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/mahasiswa');
-            exit;
-        } else {
-            Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/mahasiswa');
-            exit;
-        }
+        $data['title'] = 'Edit User - Storiatour';
+        $data['active'] = 'user';
+        $data['user'] = $this->model('userModel')->find($id);
+        $this->view('templates/header', $data);
+        $this->view('user/edit', $data);
+        $this->view('templates/footer');
     }
 
-    public function search()
+    public function update()
     {
-        $data['judul'] = 'Daftar Mahasiswa';
-        $data['mhs'] = $this->model('Mahasiswa_model')->cariDataMahasiswa();
-        $this->view('templates/header', $data);
-        $this->view('mahasiswa/index', $data);
-        $this->view('templates/footer');
+        $this->model('userModel')->change();
     }
 }

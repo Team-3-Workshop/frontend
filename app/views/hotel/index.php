@@ -21,8 +21,8 @@
             <div class="col-8 col-md-6">
                 <form action="<?= BASEURL; ?>/hotels/cari" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" name="search">
-                        <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Button</button>
+                        <input type="text" class="form-control" placeholder="Masukkan nama hotel..." aria-label="Cari" aria-describedby="button-addon2" name="search">
+                        <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Cari</button>
                     </div>
                 </form>
             </div>
@@ -38,7 +38,7 @@
         <div class="row">
             <?php foreach ($data['hotels']['data'] as $hotel) : ?>
                 <div class="col-md-6 col-sm-12">
-                    <div class="card shadow rounded">
+                    <div class="card shadow">
                         <div class="card-content">
                             <img class="card-img-top img-fluid" src="<?= BASEURL; ?>/images/samples/origami.jpg" alt="Card image cap" style="height: 20rem" />
                             <div class="card-body">

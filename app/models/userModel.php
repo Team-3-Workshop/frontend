@@ -18,7 +18,6 @@ class userModel
 
     public function search()
     {
-        // var_dump($_POST);
         $search = $_POST['search'];
 
         $url = "http://localhost:3000/api/users?fullName=" . $search;
@@ -64,25 +63,47 @@ class userModel
         return $result;
     }
 
-
-    public function update($data)
+    public function change()
     {
-        $query = "UPDATE mahasiswa SET
-                    nama = :nama,
-                    nrp = :nrp,
-                    email = :email,
-                    jurusan = :jurusan
-                  WHERE id = :id";
+        $fields = [
+            "firstName" => $_POST['firstName'],
+            "lastName" => $_POST['lastName'],
+            "fullName" => $_POST['fullName'],
+            "citizen" => $_POST['citizen'],
+            "nik" => $_POST['nik'],
+            "address" => $_POST['address'],
+            "date" => $_POST['date'],
+            "phone" => $_POST['phone'],
+            "email" => $_POST['email'],
+        ];
 
-        $this->db->query($query);
-        $this->db->bind('nama', $data['nama']);
-        $this->db->bind('nrp', $data['nrp']);
-        $this->db->bind('email', $data['email']);
-        $this->db->bind('jurusan', $data['jurusan']);
-        $this->db->bind('id', $data['id']);
+        $url = "localhost:3000/api/users/" . $_POST['id'];
 
-        $this->db->execute();
+        $post = json_encode($fields, true);
 
-        return $this->db->rowCount();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        $response = curl_exec($ch);
+
+        $result = json_decode($response, true);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        curl_close($ch);
+
+        if ($httpCode == 400) {
+            Flasher::setFlash($result['message'], 'danger');
+            header('Location: ' . BASEURL . '/users/edit/' . $_POST['id']);
+            exit;
+        } else {
+            Flasher::setFlash($result['message'], 'success');
+            header('Location: ' . BASEURL . '/users');
+            exit;
+        }
+
+        return $result;
     }
 }

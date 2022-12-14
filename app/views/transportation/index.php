@@ -24,8 +24,8 @@
             <div class="col-8 col-md-6">
                 <form action="<?= BASEURL; ?>/transportations/cari" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" name="search">
-                        <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Button</button>
+                        <input type="text" class="form-control" placeholder="Masukkan nama transportasi..." aria-label="Cari" aria-describedby="button-addon2" name="search">
+                        <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Cari</button>
                     </div>
                 </form>
             </div>
