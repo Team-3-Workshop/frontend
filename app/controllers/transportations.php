@@ -22,6 +22,15 @@ class transportations extends Controller
         $this->view('templates/footer');
     }
 
+    public function tambah()
+    {
+        $data['title'] = "Tambah Transportasi - Storiatour";
+        $data['active'] = 'transportation';
+        $this->view('templates/header', $data);
+        $this->view('transportation/tambah');
+        $this->view('templates/footer');
+    }
+
     public function detail($id)
     {
         $data['title'] = 'Transportations - Storiatour';
@@ -55,6 +64,11 @@ class transportations extends Controller
             header('Location: ' . BASEURL . '/transportations');
             exit;
         }
+    }
+
+    public function create()
+    {
+        $this->model('transportationModel')->add();
     }
 
     public function update()

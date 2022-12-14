@@ -25,6 +25,9 @@ $transportation = $data['transportation']['data'];
     <!-- Basic card section start -->
     <section id="content-types">
         <div class="row">
+            <?php Flasher::flash(); ?>
+        </div>
+        <div class="row">
             <div class="col-md-10 col-sm-12">
                 <div class="card shadow rounded">
                     <div class="row g-0">
@@ -34,7 +37,7 @@ $transportation = $data['transportation']['data'];
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h4 class="card-title mb-2"><?= $transportation['name']; ?></h4>
-                                <h6 class="card-subtitle mb-4 text-muted"><?= $transportation['address']; ?></h6>
+                                <h6 class="card-subtitle mb-4 text-muted">Kapasitas <?= $transportation['capacity']; ?> orang</h6>
 
                                 <div class="row mb-2">
                                     <p><?= $transportation['description']; ?></p>

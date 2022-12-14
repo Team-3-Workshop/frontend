@@ -25,6 +25,9 @@ $hotel = $data['hotel']['data'];
     <!-- Basic card section start -->
     <section id="content-types">
         <div class="row">
+            <?php Flasher::flash(); ?>
+        </div>
+        <div class="row">
             <div class="col-md-10 col-sm-12">
                 <div class="card shadow rounded">
                     <div class="row g-0">

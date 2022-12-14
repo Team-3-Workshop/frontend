@@ -31,7 +31,7 @@
             </div>
             <div class="col-4 col-md-6">
                 <a class="btn btn-primary" href="<?= BASEURL; ?>/transportations/tambah">
-                    <i class="bi bi-plus-lg me-2"></i><span>Tambah</span>
+                    <span>Tambah</span>
                 </a>
             </div>
         </div>
@@ -52,7 +52,7 @@
                             <img class="img-fluid w-100" src="<?= BASEURL; ?>/images/samples/banana.jpg" alt="Card image cap">
                         </div>
                         <div class="card-footer d-flex justify-content-between">
-                            <span>Kapasitas: <?= $transportation['capacity']; ?></span>
+                            <span>Kapasitas: <?= $transportation['capacity']; ?> orang</span>
                             <a href="<?= BASEURL; ?>/transportations/detail/<?= $transportation['id']; ?>" class="btn btn-light-primary">Read More</a>
                         </div>
                     </div>

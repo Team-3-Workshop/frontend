@@ -103,13 +103,15 @@ class hotelModel
 
     public function change()
     {
+        $id = $_POST['id'];
+
         $fields = [
             "name" => $_POST['name'],
             "address" => $_POST['address'],
             "description" => $_POST['description'],
         ];
 
-        $url = "localhost:3000/api/hotels/" . $_POST['id'];
+        $url = "localhost:3000/api/hotels/" . $id;
 
         $post = json_encode($fields, true);
 
@@ -128,11 +130,11 @@ class hotelModel
 
         if ($httpCode == 400) {
             Flasher::setFlash($result['message'], 'danger');
-            header('Location: ' . BASEURL . '/hotels/edit/' . $_POST['id']);
+            header('Location: ' . BASEURL . '/hotels/edit/' . $id);
             exit;
         } else {
             Flasher::setFlash($result['message'], 'success');
-            header('Location: ' . BASEURL . '/hotels');
+            header('Location: ' . BASEURL . '/hotels/detail/' . $id);
             exit;
         }
 
