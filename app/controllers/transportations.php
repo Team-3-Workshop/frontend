@@ -31,4 +31,19 @@ class transportations extends Controller
         $this->view('transportation/detail', $data);
         $this->view('templates/footer');
     }
+
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Transportation - Storiatour';
+        $data['active'] = 'transportation';
+        $data['transportation'] = $this->model('transportationModel')->find($id);
+        $this->view('templates/header', $data);
+        $this->view('transportation/edit', $data);
+        $this->view('templates/footer');
+    }
+
+    public function update()
+    {
+        $this->model('transportationModel')->change();
+    }
 }

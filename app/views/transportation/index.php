@@ -36,6 +36,9 @@
             </div>
         </div>
         <div class="row">
+            <?php Flasher::flash(); ?>
+        </div>
+        <div class="row">
             <?php foreach ($transportations as $transportation) : ?>
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="card shadow">
