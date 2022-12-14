@@ -50,7 +50,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between">
                             <span>Kapasitas: <?= $transportation['capacity']; ?></span>
-                            <button class="btn btn-light-primary">Read More</button>
+                            <a href="<?= BASEURL; ?>/transportations/detail/<?= $transportation['id']; ?>" class="btn btn-light-primary">Read More</a>
                         </div>
                     </div>
                 </div>
