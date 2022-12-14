@@ -8,23 +8,33 @@
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Hotel</li>
                     </ol>
                 </nav>
             </div>
         </div>
+    </div>
+    <!-- Basic card section start -->
+    <section id="content-types">
         <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
+            <div class="col-8 col-md-6">
+                <form action="<?= BASEURL; ?>/hotels/cari" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" name="search">
+                        <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Button</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 col-md-6">
                 <a class="btn btn-primary" href="<?= BASEURL; ?>/hotels/tambah">
                     <i class="bi bi-plus-lg me-2"></i><span>Tambah</span>
                 </a>
             </div>
         </div>
-    </div>
-    <?php Flasher::flash(); ?>
-    <!-- Basic card section start -->
-    <section id="content-types">
+        <div class="row">
+            <?php Flasher::flash(); ?>
+        </div>
         <div class="row">
             <?php foreach ($data['hotels']['data'] as $hotel) : ?>
                 <div class="col-md-6 col-sm-12">

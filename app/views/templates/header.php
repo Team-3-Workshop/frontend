@@ -24,7 +24,7 @@
         <div class="sidebar-header position-relative">
           <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-              <a href="<?= BASEURL; ?>/user"><img src="<?= BASEURL; ?>/images/logo/logo.svg" alt="Logo" srcset="" /></a>
+              <a href="<?= BASEURL; ?>/" class="navbar-brand me-2">storiatour</a>
             </div>
             <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
@@ -55,7 +55,7 @@
             <li class="sidebar-title">Menu</li>
 
             <li class="sidebar-item <?= ($data['active'] === "dashboard") ? 'active' : '' ?>">
-              <a href="<?= BASEURL; ?>/dashboard" class="sidebar-link">
+              <a href="<?= BASEURL; ?>/" class="sidebar-link">
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard</span>
               </a>

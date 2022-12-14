@@ -4,7 +4,7 @@ class hotels extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Storitour - Hotels';
+        $data['title'] = 'Hotels - Storiatour';
         $data['active'] = 'hotel';
         $data['hotels'] = $this->model('hotelModel')->get();
         $this->view('templates/header', $data);
@@ -14,7 +14,7 @@ class hotels extends Controller
 
     public function detail($id)
     {
-        $data['title'] = 'Storiatour - Hotel';
+        $data['title'] = 'Hotels - Storiatour';
         $data['active'] = 'hotel';
         $data['hotel'] = $this->model('hotelModel')->find($id);
         $this->view('templates/header', $data);
@@ -24,16 +24,26 @@ class hotels extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Storitour - Tambah Hotel";
+        $data['title'] = "Tambah Hotel - Storiatour";
         $data['active'] = 'hotel';
         $this->view('templates/header', $data);
         $this->view('hotel/tambah');
         $this->view('templates/footer');
     }
 
+    public function cari()
+    {
+        $data['title'] = "Hotels - Storiatour";
+        $data['active'] = "hotel";
+        $data['hotels'] = $this->model('hotelModel')->search();
+        $this->view('templates/header', $data);
+        $this->view('hotel/index', $data);
+        $this->view('templates/footer');
+    }
+
     public function edit($id)
     {
-        $data['title'] = 'Storiatour - Edit Hotel';
+        $data['title'] = 'Edit Hotel - Storiatour';
         $data['active'] = 'hotel';
         $data['hotel'] = $this->model('hotelModel')->find($id);
         $this->view('templates/header', $data);

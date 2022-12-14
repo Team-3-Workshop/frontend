@@ -4,7 +4,7 @@ class users extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Storiatour - Users';
+        $data['title'] = 'Users - Storiatour';
         $data['active'] = 'user';
         $data['users'] = $this->model('userModel')->get();
         $this->view('templates/header', $data);
@@ -12,9 +12,19 @@ class users extends Controller
         $this->view('templates/footer');
     }
 
+    public function cari()
+    {
+        $data['title'] = "Users - Storiatour";
+        $data['active'] = "user";
+        $data['users'] = $this->model('userModel')->search();
+        $this->view('templates/header', $data);
+        $this->view('user/index', $data);
+        $this->view('templates/footer');
+    }
+
     public function detail($id)
     {
-        $data['title'] = 'Storiatour - User';
+        $data['title'] = 'User - Storiatour';
         $data['active'] = 'user';
         $data['user'] = $this->model('userModel')->find($id);
         $this->view('templates/header', $data);

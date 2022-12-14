@@ -8,16 +8,28 @@
       <div class="col-12 col-md-6 order-md-2 order-first">
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">User</li>
           </ol>
         </nav>
       </div>
     </div>
   </div>
-  <?php Flasher::flash(); ?>
   <!-- Hoverable rows start -->
   <section class="section">
+    <div class="row">
+      <div class="col-12 col-sm-8">
+        <form action="<?= BASEURL; ?>/users/cari" method="post">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" name="search">
+            <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Button</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <?php Flasher::flash(); ?>
+    </div>
     <div class="row" id="table-hover-row">
       <div class="col-12">
         <div class="card shadow rounded">
@@ -37,7 +49,7 @@
               <tbody>
                 <?php foreach ($data['users']['data'] as $user) : ?>
                   <tr>
-                    <td><a class="fw-semibold" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
+                    <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
                     <td><?= $user['email']; ?></td>
                     <td><?= $user['phone']; ?></td>
                     <td><?= $user['citizen']; ?></td>
