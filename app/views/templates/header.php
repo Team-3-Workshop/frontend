@@ -70,15 +70,22 @@
 
             <li class="sidebar-item <?= ($data['active'] === "hotel") ? 'active' : '' ?>">
               <a href="<?= BASEURL; ?>/hotels" class="sidebar-link">
-                <i class="bi bi-layout-text-sidebar"></i>
+                <i class="bi bi-building"></i>
                 <span>Hotel</span>
               </a>
             </li>
 
             <li class="sidebar-item <?= ($data['active'] === "transportation") ? 'active' : '' ?>">
               <a href="<?= BASEURL; ?>/transportations" class="sidebar-link">
-                <i class="bi bi-train-front"></i>
+                <i class="bi bi-car-front"></i>
                 <span>Transportation</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "tourGuide") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/tourGuides" class="sidebar-link">
+                <i class="bi bi-camera"></i>
+                <span>Tour Guide</span>
               </a>
             </li>
           </ul>
