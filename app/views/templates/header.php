@@ -88,6 +88,14 @@
                 <span>Tour Guide</span>
               </a>
             </li>
+            </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "tour") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/tours" class="sidebar-link">
+                <i class="bi bi-folder"></i>
+                <span>Tour</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
