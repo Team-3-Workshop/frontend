@@ -14,7 +14,7 @@ class hotels extends Controller
 
     public function detail($id)
     {
-        $data['title'] = 'Hotels - Storiatour';
+        $data['title'] = 'Hotel - Storiatour';
         $data['active'] = 'hotel';
         $data['hotel'] = $this->model('hotelModel')->find($id);
         $this->view('templates/header', $data);
