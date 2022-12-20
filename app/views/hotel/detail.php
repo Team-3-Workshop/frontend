@@ -57,6 +57,39 @@ $hotel = $data['hotel']['data'];
                 </div>
             </div>
         </div>
+        <div class="row" id="table-hover-row">
+            <div class="col-md-10 col-sm-12">
+                <div class="card shadow rounded">
+                    <!-- table hover -->
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>WISATA</th>
+                                    <th>HARGA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!$hotel['Tours']) : ?>
+                                    <tr>
+                                        <td class="text-center" colspan="2">Data Not Found</td>
+                                    </tr>
+                                <?php else : ?>
+                                    <?php foreach ($hotel['Tours'] as $tour) : ?>
+                                        <tr>
+                                            <td>
+                                                <a class="fw-semibold navbar-brand" href="<?= BASEURL; ?>/tours/detail/<?= $tour['id']; ?>"><?= $tour['destination']; ?></a>
+                                            </td>
+                                            <td>Rp. <?= number_format($tour['price'], 2, ',', '.'); ?></td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Basic Card types section end -->
 </div>

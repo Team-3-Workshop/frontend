@@ -47,23 +47,29 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data['users']['data'] as $user) : ?>
+                <?php if (!$data['users']['data']) : ?>
                   <tr>
-                    <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
-                    <td><?= $user['email']; ?></td>
-                    <td><?= $user['phone']; ?></td>
-                    <td><?= $user['address']; ?></td>
-                    <td><?= $user['role']; ?></td>
-                    <td>
-                      <a href="<?= BASEURL; ?>/users/edit/<?= $user['id']; ?>">
-                        <i class="bi bi-pencil-fill me-2"></i>
-                      </a>
-                      <a href="<?= BASEURL; ?>/users/delete/<?= $user['id']; ?>">
-                        <i class="bi bi-trash3-fill"></i>
-                      </a>
-                    </td>
+                    <td class="text-center" colspan="6">Data Not Found</td>
                   </tr>
-                <?php endforeach ?>
+                <?php else : ?>
+                  <?php foreach ($data['users']['data'] as $user) : ?>
+                    <tr>
+                      <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
+                      <td><?= $user['email']; ?></td>
+                      <td><?= $user['phone']; ?></td>
+                      <td><?= $user['address']; ?></td>
+                      <td><?= $user['role']; ?></td>
+                      <td>
+                        <a href="<?= BASEURL; ?>/users/edit/<?= $user['id']; ?>">
+                          <i class="bi bi-pencil-fill me-2"></i>
+                        </a>
+                        <a href="<?= BASEURL; ?>/users/delete/<?= $user['id']; ?>">
+                          <i class="bi bi-trash3-fill"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endforeach ?>
+                <?php endif; ?>
               </tbody>
             </table>
           </div>

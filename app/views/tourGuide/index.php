@@ -50,21 +50,27 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data['tourGuides']['data'] as $tourGuide) : ?>
+                <?php if (!$data['tourGuides']['data']) : ?>
                   <tr>
-                    <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/tourGuides/detail/<?= $tourGuide['id']; ?>"><?= $tourGuide['fullName']; ?></a></td>
-                    <td><?= $tourGuide['phone']; ?></td>
-                    <td><?= $tourGuide['address']; ?></td>
-                    <td>
-                      <a href="<?= BASEURL; ?>/tourGuides/edit/<?= $tourGuide['id']; ?>">
-                        <i class="bi bi-pencil-fill me-2"></i>
-                      </a>
-                      <a href="<?= BASEURL; ?>/tourGuides/delete/<?= $tourGuide['id']; ?>">
-                        <i class="bi bi-trash3-fill"></i>
-                      </a>
-                    </td>
+                    <td class="text-center" colspan="4">Data Not Found</td>
                   </tr>
-                <?php endforeach ?>
+                <?php else : ?>
+                  <?php foreach ($data['tourGuides']['data'] as $tourGuide) : ?>
+                    <tr>
+                      <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/tourGuides/detail/<?= $tourGuide['id']; ?>"><?= $tourGuide['fullName']; ?></a></td>
+                      <td><?= $tourGuide['phone']; ?></td>
+                      <td><?= $tourGuide['address']; ?></td>
+                      <td>
+                        <a href="<?= BASEURL; ?>/tourGuides/edit/<?= $tourGuide['id']; ?>">
+                          <i class="bi bi-pencil-fill me-2"></i>
+                        </a>
+                        <a href="<?= BASEURL; ?>/tourGuides/delete/<?= $tourGuide['id']; ?>">
+                          <i class="bi bi-trash3-fill"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endforeach ?>
+                <?php endif; ?>
               </tbody>
             </table>
           </div>

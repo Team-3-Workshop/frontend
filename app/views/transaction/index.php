@@ -18,16 +18,6 @@
   <!-- Hoverable rows start -->
   <section class="section">
     <div class="row">
-      <div class="col-8 col-sm-6">
-        <form action="<?= BASEURL; ?>/transactions/cari" method="post">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Masukkan nama pengguna..." aria-label="Cari" aria-describedby="button-addon2" name="search">
-            <button class="btn btn-outline-primary" type="submit" id="button-addon2" name="submit">Cari</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
       <?php Flasher::flash(); ?>
     </div>
     <div class="row" id="table-hover-row">
@@ -47,27 +37,33 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data['transactions']['data'] as $transaction) : ?>
+                <?php if (!$data['transactions']['data']) : ?>
                   <tr>
-                    <td>
-                      <a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $transaction['userId']; ?>"><?= $transaction['User']['fullName']; ?></a>
-                    </td>
-                    <td>
-                      <a class="fw-semibold navbar-brand" href="<?= BASEURL; ?>/tours/detail/<?= $transaction['Tours'][0]['id']; ?>"><?= $transaction['Tours'][0]['destination']; ?></a>
-                    </td>
-                    <td><?= date_format(date_create($transaction['date']), "d/m/Y"); ?></td>
-                    <td><?= date_format(date_create($transaction['createdAt']), "d/m/Y"); ?></td>
-                    <td>Rp. <?= number_format($transaction['Tours'][0]['price'], 2, ',', '.'); ?></td>
-                    <td>
-                      <a href="<?= BASEURL; ?>/transactions/edit/<?= $transaction['id']; ?>">
-                        <i class="bi bi-pencil-fill me-2"></i>
-                      </a>
-                      <a href="<?= BASEURL; ?>/transactions/delete/<?= $transaction['id']; ?>">
-                        <i class="bi bi-trash3-fill"></i>
-                      </a>
-                    </td>
+                    <td class="text-center" colspan="6">Data Not Found</td>
                   </tr>
-                <?php endforeach ?>
+                <?php else : ?>
+                  <?php foreach ($data['transactions']['data'] as $transaction) : ?>
+                    <tr>
+                      <td>
+                        <a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $transaction['userId']; ?>"><?= $transaction['User']['fullName']; ?></a>
+                      </td>
+                      <td>
+                        <a class="fw-semibold navbar-brand" href="<?= BASEURL; ?>/tours/detail/<?= $transaction['Tours'][0]['id']; ?>"><?= $transaction['Tours'][0]['destination']; ?></a>
+                      </td>
+                      <td><?= date_format(date_create($transaction['date']), "d/m/Y"); ?></td>
+                      <td><?= date_format(date_create($transaction['createdAt']), "d/m/Y"); ?></td>
+                      <td>Rp. <?= number_format($transaction['Tours'][0]['price'], 2, ',', '.'); ?></td>
+                      <td>
+                        <a href="<?= BASEURL; ?>/transactions/edit/<?= $transaction['id']; ?>">
+                          <i class="bi bi-pencil-fill me-2"></i>
+                        </a>
+                        <a href="<?= BASEURL; ?>/transactions/delete/<?= $transaction['id']; ?>">
+                          <i class="bi bi-trash3-fill"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endforeach ?>
+                <?php endif; ?>
               </tbody>
             </table>
           </div>

@@ -120,6 +120,43 @@ $user = $data['user']['data'];
         </div>
       </div>
     </div>
+    <div class="row" id="table-hover-row">
+      <div class="col-md-10 col-sm-12">
+        <div class="card shadow rounded">
+          <!-- table hover -->
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th>WISATA</th>
+                  <th>TANGGAL PENJEMPUTAN</th>
+                  <th>TANGGAL TRANSAKSI</th>
+                  <th>HARGA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php if (!$user['Transactions']) : ?>
+                  <tr>
+                    <td class="text-center" colspan="4">Data Not Found</td>
+                  </tr>
+                <?php else : ?>
+                  <?php foreach ($user['Transactions'] as $tour) : ?>
+                    <tr>
+                      <td>
+                        <a class="fw-semibold navbar-brand" href="<?= BASEURL; ?>/tours/detail/<?= $tour['Tours'][0]['id']; ?>"><?= $tour['Tours'][0]['destination']; ?></a>
+                      </td>
+                      <td><?= date_format(date_create($tour['Tours'][0]['date']), "d/m/Y"); ?></td>
+                      <td><?= date_format(date_create($tour['Tours'][0]['createdAt']), "d/m/Y"); ?></td>
+                      <td>Rp. <?= number_format($tour['Tours'][0]['price'], 2, ',', '.'); ?></td>
+                    </tr>
+                  <?php endforeach ?>
+                <?php endif; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- Basic Card types section end -->
 </div>
