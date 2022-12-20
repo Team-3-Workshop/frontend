@@ -96,6 +96,13 @@
                 <span>Tour</span>
               </a>
             </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "transaction") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/transactions" class="sidebar-link">
+                <i class="bi bi-journal-text"></i>
+                <span>Transaction</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
