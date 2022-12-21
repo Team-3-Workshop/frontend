@@ -112,6 +112,26 @@ if (!isset($_SESSION['user'])) {
               </a>
             </li>
           </ul>
+
+          <ul class="menu">
+            <li class="sidebar-title">
+              User
+            </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "profile") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/profile" class="sidebar-link">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item <?= ($data['active'] === "transaction") ? 'active' : '' ?>">
+              <a href="<?= BASEURL; ?>/auth/logout" class="sidebar-link">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Log out</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
