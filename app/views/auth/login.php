@@ -24,13 +24,13 @@ if (isset($_SESSION['user'])) {
     <div class="row h-100">
       <div class="col-lg-5 col-12">
         <div id="auth-left">
-          <div class="">
-            <a href="<?= BASEURL; ?>/" class="fs-1 fw-bold">Storiatour</a>
-            <h2 class="">Log in.</h2>
+          <div class="mb-4">
+            <a class="fs-1 fw-bold">Storiatour</a>
+            <h2>Log in.</h2>
+            <p class="fw-light">
+              Log in with your data that you entered during registration.
+            </p>
           </div>
-          <p class="fw-light">
-            Log in with your data that you entered during registration.
-          </p>
 
           <div>
             <?php Flasher::flash(); ?>
@@ -62,7 +62,7 @@ if (isset($_SESSION['user'])) {
           <div class="text-center mt-5 text-lg fs-5">
             <p class="text-gray-600">
               Don't have an account?
-              <a href="auth-register.html" class="font-bold">Sign up</a>.
+              <a href="<?= BASEURL; ?>/auth/signin" class="font-bold">Sign up</a>.
             </p>
             <p>
               <a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.
