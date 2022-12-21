@@ -59,6 +59,16 @@ class users extends Controller
 
     public function update()
     {
-        $this->model('userModel')->change();
+        $result = $this->model('userModel')->change();
+
+        if ($result['success'] = false) {
+            Flasher::setFlash($result['message'], 'danger');
+            header('Location: ' . BASEURL . '/users/edit/' . $_POST['id']);
+            exit;
+        } else {
+            Flasher::setFlash($result['message'], 'success');
+            header('Location: ' . BASEURL . '/users');
+            exit;
+        }
     }
 }

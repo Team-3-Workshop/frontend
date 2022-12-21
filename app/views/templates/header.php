@@ -125,7 +125,7 @@ if (!isset($_SESSION['user'])) {
               </a>
             </li>
 
-            <li class="sidebar-item <?= ($data['active'] === "transaction") ? 'active' : '' ?>">
+            <li class="sidebar-item <?= ($data['active'] === "logout") ? 'active' : '' ?>">
               <a href="<?= BASEURL; ?>/auth/logout" class="sidebar-link">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Log out</span>

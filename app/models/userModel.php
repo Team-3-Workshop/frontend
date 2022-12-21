@@ -90,19 +90,8 @@ class userModel
         $response = curl_exec($ch);
 
         $result = json_decode($response, true);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
-
-        if ($httpCode == 400) {
-            Flasher::setFlash($result['message'], 'danger');
-            header('Location: ' . BASEURL . '/users/edit/' . $_POST['id']);
-            exit;
-        } else {
-            Flasher::setFlash($result['message'], 'success');
-            header('Location: ' . BASEURL . '/users');
-            exit;
-        }
 
         return $result;
     }

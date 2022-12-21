@@ -12,6 +12,12 @@ class auth extends Controller
     {
         $result = $this->model('authModel')->login();
 
+        if ($result['data']['role'] == 'user') {
+            Flasher::setFlash('You are not admin', 'danger');
+            header("Location: " . BASEURL . "/auth");
+            exit;
+        }
+
         if ($result['success'] == false) {
             Flasher::setFlash($result['message'], 'danger');
             header("Location: " . BASEURL . "/auth");
@@ -34,17 +40,17 @@ class auth extends Controller
         $password = $_POST['password'];
         $vpassword = $_POST['vpassword'];
 
+        if ($password !== $vpassword) {
+            Flasher::setFlash('Password not match', 'danger');
+            header("Location: " . BASEURL . "/auth/signin");
+            exit;
+        }
+
         $result = $this->model('authModel')->signup();
 
         if ($result['success'] == false) {
             Flasher::setFlash($result['message'], 'danger');
             header("Location: " . BASEURL . "/auth/signin");
-
-            if ($password === $vpassword) {
-                Flasher::setFlash('Password not match', 'danger');
-                header("Location: " . BASEURL . "/auth/signin");
-                exit;
-            }
         } else {
             Flasher::setFlash($result['message'], 'success');
             header("Location: " . BASEURL . "/auth");
