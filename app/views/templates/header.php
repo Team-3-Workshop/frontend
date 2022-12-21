@@ -1,3 +1,11 @@
+<?php
+
+if (!isset($_SESSION['user'])) {
+  header("Location: " . BASEURL . "/auth");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
