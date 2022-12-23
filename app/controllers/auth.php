@@ -65,4 +65,56 @@ class auth extends Controller
 
         header("Location: " . BASEURL . "/auth");
     }
+
+    public function lupa()
+    {
+        $data['title'] = "Forgot Password - Storiatour";
+        $this->view('auth/forgot', $data);
+    }
+
+    public function forgot()
+    {
+        $result = $this->model('authModel')->find();
+
+        if ($result['success'] == false) {
+            Flasher::setFlash($result['message'], 'danger');
+            header("Location: " . BASEURL . "/auth/lupa");
+        } else {
+            $_SESSION['token'] = $result['data']['id'];
+            Flasher::setFlash($result['message'], 'success');
+            header("Location: " . BASEURL . "/auth/reset");
+            exit;
+        }
+    }
+
+    public function reset()
+    {
+        $data['title'] = "Reset Password - Storiatour";
+        $this->view('auth/reset');
+    }
+
+    public function edit()
+    {
+        $id = $_SESSION['token'];
+        $password = $_POST['password'];
+        $vpassword = $_POST['vpassword'];
+
+        if ($password !== $vpassword) {
+            Flasher::setFlash('Password not match', 'danger');
+            header("Location: " . BASEURL . "/auth/reset");
+            exit;
+        }
+
+        $result = $this->model('authModel')->update($id, $password);
+
+        if ($result['success'] == false) {
+            Flasher::setFlash($result['message'], 'danger');
+            header("Location: " . BASEURL . "/auth/reset");
+        } else {
+            Flasher::setFlash($result['message'], 'success');
+            header("Location: " . BASEURL . "/auth");
+            unset($_SESSION['token']);
+            exit;
+        }
+    }
 }

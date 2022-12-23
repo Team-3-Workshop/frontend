@@ -67,7 +67,7 @@ if (isset($_SESSION['user'])) {
                   <a href="<?= BASEURL; ?>/auth/signin" class="font-bold">Sign up</a>.
                 </p>
                 <p>
-                  <a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.
+                  <a class="font-bold" href="<?= BASEURL; ?>/auth/lupa">Forgot password?</a>.
                 </p>
               </div>
             </div>

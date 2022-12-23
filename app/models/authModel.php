@@ -62,4 +62,55 @@ class authModel
 
         return $result;
     }
+
+    public function find()
+    {
+        $url = "http://localhost:3000/auth/forgot";
+
+        $fields = [
+            'email' => $_POST['email'],
+        ];
+
+        $post = json_encode($fields, true);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        $response = curl_exec($ch);
+
+        $result = json_decode($response, true);
+
+        curl_close($ch);
+
+        return $result;
+    }
+
+    public function update($id, $password)
+    {
+        $url = "http://localhost:3000/auth/reset";
+
+        $fields = [
+            'id' => $id,
+            'password' => $password
+        ];
+
+        $post = json_encode($fields, true);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        $response = curl_exec($ch);
+
+        $result = json_decode($response, true);
+
+        curl_close($ch);
+
+        return $result;
+    }
 }
