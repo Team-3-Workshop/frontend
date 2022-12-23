@@ -12,6 +12,10 @@ class auth extends Controller
     {
         $result = $this->model('authModel')->login();
 
+        if (isset($_POST['remember'])) {
+            setcookie('user', $result['data']['id'], time() + (10 * 365 * 24 * 60 * 60));
+        }
+
         if ($result['data']['role'] == 'user') {
             Flasher::setFlash('You are not admin', 'danger');
             header("Location: " . BASEURL . "/auth");
@@ -62,6 +66,9 @@ class auth extends Controller
     {
         session_start();
         session_destroy();
+
+        unset($_COOKIE['user']);
+        setcookie('user', '', time() - (10 * 365 * 24 * 60 * 60));
 
         header("Location: " . BASEURL . "/auth");
     }
