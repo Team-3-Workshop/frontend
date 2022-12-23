@@ -18,7 +18,9 @@
   <!-- Hoverable rows start -->
   <section class="section">
     <div class="row">
-      <?php Flasher::flash(); ?>
+      <div class="col-12">
+        <?php Flasher::flash(); ?>
+      </div>
     </div>
     <div class="row" id="table-hover-row">
       <div class="col-12">

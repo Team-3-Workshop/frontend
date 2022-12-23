@@ -25,13 +25,13 @@ $tourGuides = $data['tourGuides']['data'];
     </div>
 
     <!-- Basic Horizontal form layout section start -->
-    <?php Flasher::flash(); ?>
     <section id="basic-horizontal-layouts">
         <div class="row match-height">
             <div class="col-md-8 col-12">
-                <div class="card">
+                <div class="card shadow rounded">
                     <div class="card-content">
                         <div class="card-body">
+                            <?php Flasher::flash(); ?>
                             <form class="form form-horizontal" method="POST" action="<?= BASEURL; ?>/tours/create">
                                 <div class="form-body">
                                     <div class="row">

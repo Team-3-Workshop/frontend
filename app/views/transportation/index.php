@@ -36,12 +36,14 @@
             </div>
         </div>
         <div class="row">
-            <?php Flasher::flash(); ?>
+            <div class="col-12">
+                <?php Flasher::flash(); ?>
+            </div>
         </div>
         <div class="row">
             <?php foreach ($transportations as $transportation) : ?>
                 <div class="col-xl-4 col-md-6 col-sm-12">
-                    <div class="card shadow">
+                    <div class="card shadow rounded">
                         <div class="card-content">
                             <div class="card-body">
                                 <h4 class="card-title"><?= $transportation['name']; ?></h4>

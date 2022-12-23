@@ -33,14 +33,16 @@
             </div>
         </div>
         <div class="row">
-            <?php Flasher::flash(); ?>
+            <div class="col-12">
+                <?php Flasher::flash(); ?>
+            </div>
         </div>
         <div class="row">
             <?php foreach ($data['tours']['data'] as $tour) : ?>
                 <div class="col-md-6 col-sm-12">
-                    <div class="card shadow">
+                    <div class="card shadow rounded">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="<?= BASEURL; ?>/images/samples/origami.jpg" alt="Card image cap" style="height: 20rem" />
+                            <img class="card-img-top img-fluid rounded-top" src="<?= BASEURL; ?>/images/samples/origami.jpg" alt="Card image cap" style="height: 20rem" />
                             <div class="card-body">
                                 <h4 class="card-title"><?= $tour['destination']; ?></h4>
                                 <h6 class="card-subtitle mb-3 text-muted">Rp. <?= number_format($tour['price'], 2, ',', '.'); ?></h6>

@@ -25,12 +25,14 @@ $tour = $data['tour']['data'];
     <!-- Basic card section start -->
     <section id="content-types">
         <div class="row">
-            <?php Flasher::flash(); ?>
+            <div class="col-md-8 col-sm-12">
+                <?php Flasher::flash(); ?>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-8 col-sm-12">
                 <div class="card shadow rounded">
-                    <img src="<?= BASEURL; ?>/images/samples/origami.jpg" class="card-img-top img-fluid" alt="Tour Image" style="height: 100%; object-fit: cover;">
+                    <img src="<?= BASEURL; ?>/images/samples/origami.jpg" class="card-img-top img-fluid rounded-top" alt="Tour Image" style="height: 100%; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $tour['destination']; ?></h5>
                         <small class="text-muted">Rp. <?= number_format($tour['price'], 2, ',', '.'); ?></small>

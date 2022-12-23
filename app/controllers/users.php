@@ -61,7 +61,7 @@ class users extends Controller
     {
         $result = $this->model('userModel')->change();
 
-        if ($result['success'] = false) {
+        if ($result['success'] == false) {
             Flasher::setFlash($result['message'], 'danger');
             header('Location: ' . BASEURL . '/users/edit/' . $_POST['id']);
             exit;

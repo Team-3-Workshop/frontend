@@ -28,11 +28,13 @@
       </div>
     </div>
     <div class="row">
-      <?php Flasher::flash(); ?>
+      <div class="col-12">
+        <?php Flasher::flash(); ?>
+      </div>
     </div>
     <div class="row" id="table-hover-row">
       <div class="col-12">
-        <div class="card shadow">
+        <div class="card shadow rounded">
           <!-- table hover -->
           <div class="table-responsive">
             <table class="table table-hover mb-0">
