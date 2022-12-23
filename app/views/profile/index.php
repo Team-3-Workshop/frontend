@@ -95,7 +95,8 @@ $user = $data['user']['data'];
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="first-name" class="form-control" name="email" value="<?= $user['email']; ?>" required>
                                         </div>
-                                        <div class="col-sm-12 d-flex justify-content-end">
+                                        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+                                            <a href="<?= BASEURL; ?>/profile/edit">Edit Password</a>
                                             <button type="submit" class="btn btn-primary me-2 mb-1">Simpan</button>
                                         </div>
                                     </div>
