@@ -14,9 +14,21 @@ class hotels extends Controller
 
     public function detail($id)
     {
+        $response = $this->model('hotelModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'hotels';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Hotel - Storiatour';
         $data['active'] = 'hotel';
-        $data['hotel'] = $this->model('hotelModel')->find($id);
+        $data['hotel'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('hotel/detail', $data);
         $this->view('templates/footer');
@@ -43,9 +55,21 @@ class hotels extends Controller
 
     public function edit($id)
     {
+        $response = $this->model('hotelModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'hotels';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Edit Hotel - Storiatour';
         $data['active'] = 'hotel';
-        $data['hotel'] = $this->model('hotelModel')->find($id);
+        $data['hotel'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('hotel/edit', $data);
         $this->view('templates/footer');

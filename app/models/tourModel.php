@@ -125,10 +125,13 @@ class tourModel
         $response = curl_exec($ch);
 
         $result = json_decode($response, true);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
 
-        return $result;
+        $feedback = ['code' => $httpcode, 'result' => $result];
+
+        return $feedback;
     }
 
     public function drop($id)

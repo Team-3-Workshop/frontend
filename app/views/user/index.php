@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
+  </section>
 </div>
-</section>
 <!-- Hoverable rows end -->
 </div>

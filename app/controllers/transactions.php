@@ -14,9 +14,21 @@ class transactions extends Controller
 
     public function edit($id)
     {
+        $response = $this->model('transactionModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'transaction';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Edit Transaction - Storiatour';
         $data['active'] = 'transaction';
-        $data['transaction'] = $this->model('transactionModel')->find($id);
+        $data['transaction'] = $response['result'];
         $data['tours'] = $this->model('tourModel')->get();
         $this->view('templates/header', $data);
         $this->view('transaction/edit', $data);

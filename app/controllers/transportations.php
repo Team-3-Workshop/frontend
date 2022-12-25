@@ -33,9 +33,21 @@ class transportations extends Controller
 
     public function detail($id)
     {
+        $response = $this->model('transportationModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'transportation';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Transportations - Storiatour';
         $data['active'] = 'transportation';
-        $data['transportation'] = $this->model('transportationModel')->find($id);
+        $data['transportation'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('transportation/detail', $data);
         $this->view('templates/footer');
@@ -43,9 +55,21 @@ class transportations extends Controller
 
     public function edit($id)
     {
+        $response = $this->model('transportationModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'transportation';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Edit Transportation - Storiatour';
         $data['active'] = 'transportation';
-        $data['transportation'] = $this->model('transportationModel')->find($id);
+        $data['transportation'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('transportation/edit', $data);
         $this->view('templates/footer');

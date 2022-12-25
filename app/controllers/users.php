@@ -24,9 +24,21 @@ class users extends Controller
 
     public function detail($id)
     {
+        $response = $this->model('userModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'user';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'User - Storiatour';
         $data['active'] = 'user';
-        $data['user'] = $this->model('userModel')->find($id);
+        $data['user'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('user/detail', $data);
         $this->view('templates/footer');
@@ -34,6 +46,14 @@ class users extends Controller
 
     public function delete($id)
     {
+        $user = $_SESSION['user'];
+
+        if ($id === $user) {
+            Flasher::setFlash('You can not delete this account', 'danger');
+            header('Location: ' . BASEURL . '/users');
+            exit;
+        }
+
         $data = $this->model('userModel')->drop($id);
 
         if ($data['success'] == true) {
@@ -49,9 +69,21 @@ class users extends Controller
 
     public function edit($id)
     {
+        $response = $this->model('userModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'user';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Edit User - Storiatour';
         $data['active'] = 'user';
-        $data['user'] = $this->model('userModel')->find($id);
+        $data['user'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('user/edit', $data);
         $this->view('templates/footer');

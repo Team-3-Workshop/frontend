@@ -42,12 +42,6 @@ $tourGuides = $data['tourGuides']['data'];
                                             <input type="text" id="first-name" class="form-control" name="destination">
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Deskripsi Wisata</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <textarea class="form-control" id="floatingTextarea" name="description"></textarea>
-                                        </div>
-                                        <div class="col-md-4">
                                             <label>Hotel</label>
                                         </div>
                                         <div class="col-md-8 form-group">
@@ -85,6 +79,12 @@ $tourGuides = $data['tourGuides']['data'];
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="first-name" class="form-control" name="price">
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label>Deskripsi Wisata</label>
+                                        </div>
+                                        <div class="col-12 form-group">
+                                            <textarea class="form-control" id="editor" name="description"></textarea>
                                         </div>
                                         <div class="col-sm-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-2 mb-1" name="submit">Simpan</button>

@@ -46,9 +46,6 @@
                             <div class="card-body">
                                 <h4 class="card-title"><?= $tour['destination']; ?></h4>
                                 <h6 class="card-subtitle mb-3 text-muted">Rp. <?= number_format($tour['price'], 2, ',', '.'); ?></h6>
-                                <p class="card-text text-wrap">
-                                    <?= $tour['description']; ?>
-                                </p>
                                 <a href="<?= BASEURL; ?>/tours/detail/<?= $tour['id']; ?>">See More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>

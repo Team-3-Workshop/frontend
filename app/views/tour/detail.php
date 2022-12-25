@@ -40,15 +40,13 @@ $tour = $data['tour']['data'];
                     </div>
                     <ul class="list-group list-group-flush px-2">
                         <li class="list-group-item">
-                            <h6><?= $tour['Hotel']['name']; ?></h5>
-                                <p><?= $tour['Hotel']['description']; ?></p>
+                            <a href="<?= BASEURL; ?>/hotels/detail/<?= $tour['hotelId']; ?>" class="fw-bold"><?= $tour['Hotel']['name']; ?></a>
                         </li>
                         <li class="list-group-item">
-                            <h6><?= $tour['Transportation']['name']; ?></h6>
-                            <p><?= $tour['Transportation']['description']; ?></p>
+                            <a href="<?= BASEURL; ?>/transportations/detail/<?= $tour['transportationId']; ?>" class="fw-bold"><?= $tour['Transportation']['name']; ?></a>
                         </li>
                         <li class="list-group-item">
-                            <h6><?= $tour['TourGuide']['fullName']; ?></h6>
+                            <a href="<?= BASEURL; ?>/tourGuides/detail/<?= $tour['tourGuideId']; ?>" class="fw-bold"><?= $tour['TourGuide']['fullName']; ?></a>
                             <p><?= $tour['TourGuide']['phone']; ?></p>
                         </li>
                     </ul>

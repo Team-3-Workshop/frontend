@@ -36,9 +36,21 @@ class tours extends Controller
 
     public function detail($id)
     {
+        $response = $this->model('tourModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'tour';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = "Tour - Storiatour";
         $data['active'] = "tour";
-        $data['tour'] = $this->model('tourModel')->find($id);
+        $data['tour'] = $response['result'];
         $this->view("templates/header", $data);
         $this->view("tour/detail", $data);
         $this->view("templates/footer");
@@ -61,9 +73,21 @@ class tours extends Controller
 
     public function edit($id)
     {
+        $response = $this->model('tourModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'tour';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Edit Tour - Storiatour';
         $data['active'] = 'tour';
-        $data['tour'] = $this->model('tourModel')->find($id);
+        $data['tour'] = $response['result'];
         $data['hotels'] = $this->model('hotelModel')->get();
         $data['transportations'] = $this->model('transportationModel')->get();
         $data['tourGuides'] = $this->model('tourGuideModel')->get();

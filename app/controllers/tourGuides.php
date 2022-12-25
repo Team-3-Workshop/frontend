@@ -33,9 +33,21 @@ class tourGuides extends Controller
 
     public function detail($id)
     {
+        $response = $this->model('tourGuideModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'tourGuide';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = "Tour Guide - Storiatour";
         $data['active'] = "tourGuide";
-        $data['tourGuide'] = $this->model('tourGuideModel')->find($id);
+        $data['tourGuide'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('tourGuide/detail', $data);
         $this->view('templates/footer');
@@ -43,9 +55,21 @@ class tourGuides extends Controller
 
     public function edit($id)
     {
+        $response = $this->model('tourGuideModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404 - Storiatour";
+            $data['active'] = 'tourGuide';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = 'Edit Tour Guide - Storiatour';
         $data['active'] = 'tourGuide';
-        $data['tourGuide'] = $this->model('tourGuideModel')->find($id);
+        $data['tourGuide'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('tourGuide/edit', $data);
         $this->view('templates/footer');
