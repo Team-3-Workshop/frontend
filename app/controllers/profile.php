@@ -6,7 +6,7 @@ class profile extends Controller
     {
         $id = $_SESSION['user'];
 
-        $data['title'] = "Profile - Storiatour";
+        $data['title'] = "Profile";
         $data['active'] = "profile";
         $data['user'] = $this->model('userModel')->find($id);
         $this->view('templates/header', $data);
@@ -33,7 +33,7 @@ class profile extends Controller
     {
         $id = $_SESSION['user'];
 
-        $data['title'] = "Edit Password - Storiatour";
+        $data['title'] = "Edit Password";
         $data['active'] = "profile";
         $data['user'] = $this->model('userModel')->find($id);
         $this->view('templates/header', $data);

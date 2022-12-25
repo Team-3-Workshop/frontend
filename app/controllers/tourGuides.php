@@ -4,7 +4,7 @@ class tourGuides extends Controller
 {
     public function index()
     {
-        $data['title'] = "Tour Guides - Storiatour";
+        $data['title'] = "Tour Guides";
         $data['active'] = "tourGuide";
         $data['tourGuides'] = $this->model('tourGuideModel')->get();
         $this->view('templates/header', $data);
@@ -14,7 +14,7 @@ class tourGuides extends Controller
 
     public function cari()
     {
-        $data['title'] = "Tour Guides - Storiatour";
+        $data['title'] = "Tour Guides";
         $data['active'] = "tourGuide";
         $data['tourGuides'] = $this->model('tourGuideModel')->search();
         $this->view('templates/header', $data);
@@ -24,7 +24,7 @@ class tourGuides extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Tour Guide - Storiatour";
+        $data['title'] = "Tambah Tour Guide";
         $data['active'] = 'tourGuide';
         $this->view('templates/header', $data);
         $this->view('tourGuide/tambah');
@@ -36,7 +36,7 @@ class tourGuides extends Controller
         $response = $this->model('tourGuideModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'tourGuide';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -45,7 +45,7 @@ class tourGuides extends Controller
             exit;
         }
 
-        $data['title'] = "Tour Guide - Storiatour";
+        $data['title'] = "Tour Guide";
         $data['active'] = "tourGuide";
         $data['tourGuide'] = $response['result'];
         $this->view('templates/header', $data);
@@ -58,7 +58,7 @@ class tourGuides extends Controller
         $response = $this->model('tourGuideModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'tourGuide';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -67,7 +67,7 @@ class tourGuides extends Controller
             exit;
         }
 
-        $data['title'] = 'Edit Tour Guide - Storiatour';
+        $data['title'] = 'Edit Tour Guide';
         $data['active'] = 'tourGuide';
         $data['tourGuide'] = $response['result'];
         $this->view('templates/header', $data);

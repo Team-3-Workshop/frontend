@@ -4,7 +4,7 @@ class auth extends Controller
 {
     public function index()
     {
-        $data['title'] = "Login - Storiatour";
+        $data['title'] = "Login";
         $this->view('auth/login', $data);
     }
 
@@ -35,7 +35,7 @@ class auth extends Controller
 
     public function signin()
     {
-        $data['title'] = "Signin - Storiatour";
+        $data['title'] = "Signin";
         $this->view('auth/signin', $data);
     }
 
@@ -75,7 +75,7 @@ class auth extends Controller
 
     public function lupa()
     {
-        $data['title'] = "Forgot Password - Storiatour";
+        $data['title'] = "Forgot Password";
         $this->view('auth/forgot', $data);
     }
 
@@ -96,7 +96,7 @@ class auth extends Controller
 
     public function reset()
     {
-        $data['title'] = "Reset Password - Storiatour";
+        $data['title'] = "Reset Password";
         $this->view('auth/reset');
     }
 

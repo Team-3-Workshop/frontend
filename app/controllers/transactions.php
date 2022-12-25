@@ -4,7 +4,7 @@ class transactions extends Controller
 {
     public function index()
     {
-        $data['title'] = "Transactions - Storiatour";
+        $data['title'] = "Transactions";
         $data['active'] = "transaction";
         $data['transactions'] = $this->model('transactionModel')->get();
         $this->view('templates/header', $data);
@@ -17,7 +17,7 @@ class transactions extends Controller
         $response = $this->model('transactionModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'transaction';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -26,7 +26,7 @@ class transactions extends Controller
             exit;
         }
 
-        $data['title'] = 'Edit Transaction - Storiatour';
+        $data['title'] = 'Edit Transaction';
         $data['active'] = 'transaction';
         $data['transaction'] = $response['result'];
         $data['tours'] = $this->model('tourModel')->get();

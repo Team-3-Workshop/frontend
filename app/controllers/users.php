@@ -4,7 +4,7 @@ class users extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Users - Storiatour';
+        $data['title'] = 'Users';
         $data['active'] = 'user';
         $data['users'] = $this->model('userModel')->get();
         $this->view('templates/header', $data);
@@ -14,7 +14,7 @@ class users extends Controller
 
     public function cari()
     {
-        $data['title'] = "Users - Storiatour";
+        $data['title'] = "Users";
         $data['active'] = "user";
         $data['users'] = $this->model('userModel')->search();
         $this->view('templates/header', $data);
@@ -27,7 +27,7 @@ class users extends Controller
         $response = $this->model('userModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'user';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -36,7 +36,7 @@ class users extends Controller
             exit;
         }
 
-        $data['title'] = 'User - Storiatour';
+        $data['title'] = 'User';
         $data['active'] = 'user';
         $data['user'] = $response['result'];
         $this->view('templates/header', $data);
@@ -72,7 +72,7 @@ class users extends Controller
         $response = $this->model('userModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'user';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -81,7 +81,7 @@ class users extends Controller
             exit;
         }
 
-        $data['title'] = 'Edit User - Storiatour';
+        $data['title'] = 'Edit User';
         $data['active'] = 'user';
         $data['user'] = $response['result'];
         $this->view('templates/header', $data);

@@ -4,7 +4,7 @@ class transportations extends Controller
 {
     public function index()
     {
-        $data['title'] = "Transportations - Storiatour";
+        $data['title'] = "Transportations";
         $data['active'] = 'transportation';
         $data['transportations'] = $this->model('transportationModel')->get();
         $this->view('templates/header', $data);
@@ -14,7 +14,7 @@ class transportations extends Controller
 
     public function cari()
     {
-        $data['title'] = "Transportations - Storiatour";
+        $data['title'] = "Transportations";
         $data['active'] = "transportation";
         $data['transportations'] = $this->model('transportationModel')->search();
         $this->view('templates/header', $data);
@@ -24,7 +24,7 @@ class transportations extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Transportasi - Storiatour";
+        $data['title'] = "Tambah Transportasi";
         $data['active'] = 'transportation';
         $this->view('templates/header', $data);
         $this->view('transportation/tambah');
@@ -36,7 +36,7 @@ class transportations extends Controller
         $response = $this->model('transportationModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'transportation';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -45,7 +45,7 @@ class transportations extends Controller
             exit;
         }
 
-        $data['title'] = 'Transportations - Storiatour';
+        $data['title'] = 'Transportations';
         $data['active'] = 'transportation';
         $data['transportation'] = $response['result'];
         $this->view('templates/header', $data);
@@ -58,7 +58,7 @@ class transportations extends Controller
         $response = $this->model('transportationModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'transportation';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -67,7 +67,7 @@ class transportations extends Controller
             exit;
         }
 
-        $data['title'] = 'Edit Transportation - Storiatour';
+        $data['title'] = 'Edit Transportation';
         $data['active'] = 'transportation';
         $data['transportation'] = $response['result'];
         $this->view('templates/header', $data);

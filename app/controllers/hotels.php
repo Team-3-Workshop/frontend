@@ -4,7 +4,7 @@ class hotels extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Hotels - Storiatour';
+        $data['title'] = 'Hotels';
         $data['active'] = 'hotel';
         $data['hotels'] = $this->model('hotelModel')->get();
         $this->view('templates/header', $data);
@@ -17,7 +17,7 @@ class hotels extends Controller
         $response = $this->model('hotelModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'hotels';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -26,7 +26,7 @@ class hotels extends Controller
             exit;
         }
 
-        $data['title'] = 'Hotel - Storiatour';
+        $data['title'] = 'Hotel';
         $data['active'] = 'hotel';
         $data['hotel'] = $response['result'];
         $this->view('templates/header', $data);
@@ -36,7 +36,7 @@ class hotels extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Hotel - Storiatour";
+        $data['title'] = "Tambah Hotel";
         $data['active'] = 'hotel';
         $this->view('templates/header', $data);
         $this->view('hotel/tambah');
@@ -45,7 +45,7 @@ class hotels extends Controller
 
     public function cari()
     {
-        $data['title'] = "Hotels - Storiatour";
+        $data['title'] = "Hotels";
         $data['active'] = "hotel";
         $data['hotels'] = $this->model('hotelModel')->search();
         $this->view('templates/header', $data);
@@ -58,7 +58,7 @@ class hotels extends Controller
         $response = $this->model('hotelModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'hotels';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -67,7 +67,7 @@ class hotels extends Controller
             exit;
         }
 
-        $data['title'] = 'Edit Hotel - Storiatour';
+        $data['title'] = 'Edit Hotel';
         $data['active'] = 'hotel';
         $data['hotel'] = $response['result'];
         $this->view('templates/header', $data);

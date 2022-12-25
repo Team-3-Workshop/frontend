@@ -4,7 +4,7 @@ class tours extends Controller
 {
     public function index()
     {
-        $data['title'] = "Tours - Storiatour";
+        $data['title'] = "Tours";
         $data['active'] = "tour";
         $data['tours'] = $this->model('tourModel')->get();
         $this->view('templates/header', $data);
@@ -14,7 +14,7 @@ class tours extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Tour - Storiatour";
+        $data['title'] = "Tambah Tour";
         $data['active'] = 'tour';
         $data['hotels'] = $this->model('hotelModel')->get();
         $data['transportations'] = $this->model('transportationModel')->get();
@@ -26,7 +26,7 @@ class tours extends Controller
 
     public function cari()
     {
-        $data['title'] = "Tours - Storiatour";
+        $data['title'] = "Tours";
         $data['active'] = "tour";
         $data['tours'] = $this->model('tourModel')->search();
         $this->view('templates/header', $data);
@@ -39,7 +39,7 @@ class tours extends Controller
         $response = $this->model('tourModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'tour';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -48,7 +48,7 @@ class tours extends Controller
             exit;
         }
 
-        $data['title'] = "Tour - Storiatour";
+        $data['title'] = "Tour";
         $data['active'] = "tour";
         $data['tour'] = $response['result'];
         $this->view("templates/header", $data);
@@ -76,7 +76,7 @@ class tours extends Controller
         $response = $this->model('tourModel')->find($id);
 
         if ($response['code'] == 404) {
-            $data['title'] = "404 - Storiatour";
+            $data['title'] = "404";
             $data['active'] = 'tour';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
@@ -85,7 +85,7 @@ class tours extends Controller
             exit;
         }
 
-        $data['title'] = 'Edit Tour - Storiatour';
+        $data['title'] = 'Edit Tour';
         $data['active'] = 'tour';
         $data['tour'] = $response['result'];
         $data['hotels'] = $this->model('hotelModel')->get();

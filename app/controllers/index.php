@@ -4,7 +4,7 @@ class index extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Dashboard - Storiatour';
+        $data['title'] = 'Dashboard';
         $data['active'] = 'dashboard';
         $this->view('templates/header', $data);
         $this->view('dashboard/index');
