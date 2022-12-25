@@ -54,6 +54,7 @@ class hotelModel
             'name' => $_POST['name'],
             'address' => $_POST['address'],
             'description' => $_POST['description'],
+            "price" => (int)$_POST['price'],
         ];
 
         $post = json_encode($fields, true);
@@ -109,6 +110,7 @@ class hotelModel
             "name" => $_POST['name'],
             "address" => $_POST['address'],
             "description" => $_POST['description'],
+            "price" => (int)$_POST['price'],
         ];
 
         $url = "localhost:3000/api/hotels/" . $id;

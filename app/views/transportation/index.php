@@ -47,9 +47,7 @@
                         <div class="card-content">
                             <div class="card-body">
                                 <h4 class="card-title"><?= $transportation['name']; ?></h4>
-                                <p class="card-text">
-                                    <?= $transportation['description']; ?>
-                                </p>
+                                <p class="card-subtitle">Rp. <?= number_format($transportation['price'], 2, ',', '.'); ?></p>
                             </div>
                             <img class="img-fluid w-100" src="<?= BASEURL; ?>/images/samples/banana.jpg" alt="Card image cap">
                         </div>

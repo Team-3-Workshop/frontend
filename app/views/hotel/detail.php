@@ -40,9 +40,12 @@ $hotel = $data['hotel']['data'];
                             <div class="card-body">
                                 <h4 class="card-title mb-2"><?= $hotel['name']; ?></h4>
                                 <h6 class="card-subtitle mb-4 text-muted"><?= $hotel['address']; ?></h6>
+                                <p class="card-text">Rp. <?= number_format($hotel['price'], 2, ',', '.'); ?></p>
 
                                 <div class="row mb-2">
-                                    <p><?= $hotel['description']; ?></p>
+                                    <div class="col-12">
+                                        <p><?= $hotel['description']; ?></p>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6 d-flex">

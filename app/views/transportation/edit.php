@@ -47,10 +47,18 @@ $transportation = $data['transportation']['data'];
                                             <input type="text" id="first-name" class="form-control" name="capacity" value="<?= $transportation['capacity']; ?>" required>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Deskripsi Transportasi</label>
+                                            <label>Harga</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <textarea class="form-control" id="floatingTextarea" name="description" required><?= $transportation['description']; ?></textarea>
+                                            <input type="text" id="first-name" class="form-control" name="price" value="<?= $transportation['price']; ?>">
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label>Deskripsi Transportasi</label>
+                                        </div>
+                                        <div class="col-12 form-group">
+                                            <textarea class="form-control" id="editor" name="description">
+                                                <?= $transportation['description']; ?>
+                                            </textarea>
                                         </div>
                                         <div class="col-sm-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-2 mb-1">Simpan</button>

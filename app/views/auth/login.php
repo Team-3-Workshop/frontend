@@ -19,6 +19,7 @@ if (isset($_SESSION['user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?= $data['title']; ?></title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main/app.css" />
+  <link rel="stylesheet" href="<?= BASEURL; ?>/css/main/app-dark.css" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/pages/auth.css" />
   <link rel="shortcut icon" href="<?= BASEURL; ?>/images/logo/favicon.svg" type="image/x-icon" />
   <link rel="shortcut icon" href="<?= BASEURL; ?>/images/logo/favicon.png" type="image/png" />
@@ -81,6 +82,10 @@ if (isset($_SESSION['user'])) {
       </div>
     </div>
   </div>
+
+  <script src="<?= BASEURL; ?>/js/bootstrap.js"></script>
+  <script src="<?= BASEURL; ?>/js/app.js"></script>
+
 </body>
 
 </html>

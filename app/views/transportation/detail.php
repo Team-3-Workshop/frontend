@@ -40,9 +40,12 @@ $transportation = $data['transportation']['data'];
                             <div class="card-body">
                                 <h4 class="card-title mb-2"><?= $transportation['name']; ?></h4>
                                 <h6 class="card-subtitle mb-4 text-muted">Kapasitas <?= $transportation['capacity']; ?> orang</h6>
+                                <p class="card-text">Rp. <?= number_format($transportation['price'], 2, ',', '.'); ?></p>
 
                                 <div class="row mb-2">
-                                    <p><?= $transportation['description']; ?></p>
+                                    <div class="col-12">
+                                        <p><?= $transportation['description']; ?></p>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6 d-flex">

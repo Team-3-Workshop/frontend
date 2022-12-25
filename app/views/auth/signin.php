@@ -127,6 +127,10 @@
             </div>
         </div>
     </div>
+
+    <script src="<?= BASEURL; ?>/js/bootstrap.js"></script>
+    <script src="<?= BASEURL; ?>/js/app.js"></script>
+
 </body>
 
 </html>

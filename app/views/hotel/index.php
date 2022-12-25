@@ -46,8 +46,8 @@
                             <div class="card-body">
                                 <h4 class="card-title"><?= $hotel['name']; ?></h4>
                                 <h6 class="card-subtitle mb-3 text-muted"><?= $hotel['address']; ?></h6>
-                                <p class="card-text text-wrap">
-                                    <?= $hotel['description']; ?>
+                                <p class="card-text">
+                                    Rp. <?= number_format($hotel['price'], 2, ',', '.'); ?>
                                 </p>
                                 <a href="<?= BASEURL; ?>/hotels/detail/<?= $hotel['id']; ?>">See More <i class="bi bi-arrow-right"></i></a>
                             </div>

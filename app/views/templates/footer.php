@@ -6,9 +6,15 @@
       <!-- Need: Apexcharts -->
       <script src="<?= BASEURL; ?>/extensions/apexcharts/apexcharts.min.js"></script>
       <script src="<?= BASEURL; ?>/js/pages/dashboard.js"></script>
-      </body>
 
-      <script src="<?= BASEURL; ?>/extensions/quill/quill.min.js"></script>
-      <script src="<?= BASEURL; ?>/js/pages/quill.js"></script>
+
+      <script>
+            ClassicEditor
+                  .create(document.querySelector('#editor'))
+                  .catch(error => {
+                        console.error(error);
+                  });
+      </script>
+      </body>
 
       </html>

@@ -40,6 +40,7 @@ class transportationModel
         $fields = [
             'name' => $_POST['name'],
             'capacity' => (int)$_POST['capacity'],
+            'price' => (int)$_POST['price'],
             'description' => $_POST['description'],
         ];
 
@@ -108,6 +109,7 @@ class transportationModel
         $fields = [
             "name" => $_POST['name'],
             "capacity" => (int)$_POST['capacity'],
+            "price" => (int)$_POST['price'],
             "description" => $_POST['description'],
         ];
 
