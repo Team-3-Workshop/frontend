@@ -6,9 +6,21 @@ class profile extends Controller
     {
         $id = $_SESSION['user'];
 
+        $response = $this->model('userModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404";
+            $data['active'] = 'user';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = "Profile";
         $data['active'] = "profile";
-        $data['user'] = $this->model('userModel')->find($id);
+        $data['user'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('profile/index', $data);
         $this->view('templates/footer');
@@ -33,9 +45,21 @@ class profile extends Controller
     {
         $id = $_SESSION['user'];
 
+        $response = $this->model('userModel')->find($id);
+
+        if ($response['code'] == 404) {
+            $data['title'] = "404";
+            $data['active'] = 'user';
+            $data['message'] = $response['result']['message'];
+            $this->view('templates/header', $data);
+            $this->view('404', $data);
+            $this->view('templates/footer');
+            exit;
+        }
+
         $data['title'] = "Edit Password";
         $data['active'] = "profile";
-        $data['user'] = $this->model('userModel')->find($id);
+        $data['user'] = $response['result'];
         $this->view('templates/header', $data);
         $this->view('profile/edit', $data);
         $this->view('templates/footer');
@@ -44,7 +68,6 @@ class profile extends Controller
     public function reset()
     {
         $id = $_POST['id'];
-
         $password = $_POST['password'];
         $vpassword = $_POST['vpassword'];
 

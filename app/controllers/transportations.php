@@ -24,10 +24,10 @@ class transportations extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Transportasi";
+        $data['title'] = "Create Transportation";
         $data['active'] = 'transportation';
         $this->view('templates/header', $data);
-        $this->view('transportation/tambah');
+        $this->view('transportation/tambah', $data);
         $this->view('templates/footer');
     }
 
@@ -45,7 +45,7 @@ class transportations extends Controller
             exit;
         }
 
-        $data['title'] = 'Transportations';
+        $data['title'] = 'Detail Transportation';
         $data['active'] = 'transportation';
         $data['transportation'] = $response['result'];
         $this->view('templates/header', $data);

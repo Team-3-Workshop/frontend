@@ -8,15 +8,14 @@ $user = $data['user']['data'];
   <div class="page-title">
     <div class="row">
       <div class="col-12 col-md-6 order-md-1 order-last">
-        <h3>User Detail</h3>
-        <p class="text-subtitle text-muted">Bootstrap’s cards provide a flexible and extensible content
-          container with multiple variants and options.</p>
+        <h3><?= $data['title']; ?></h3>
+        <p class="text-subtitle text-muted">This page is providing data from a user.</p>
       </div>
       <div class="col-12 col-md-6 order-md-2 order-first">
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/users">User</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+            <li class="breadcrumb-item active" aria-current="page"><?= $data['title']; ?></li>
           </ol>
         </nav>
       </div>

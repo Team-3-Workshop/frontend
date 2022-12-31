@@ -18,7 +18,7 @@ if (!isset($_SESSION['token'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?= $data['title']; ?></title>
+  <title><?= $data['title']; ?> - Storiatour</title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main/app.css" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/pages/auth.css" />
   <link rel="shortcut icon" href="<?= BASEURL; ?>/images/logo/favicon.svg" type="image/x-icon" />

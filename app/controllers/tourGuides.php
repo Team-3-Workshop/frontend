@@ -24,10 +24,10 @@ class tourGuides extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Tour Guide";
+        $data['title'] = "Create Tour Guide";
         $data['active'] = 'tourGuide';
         $this->view('templates/header', $data);
-        $this->view('tourGuide/tambah');
+        $this->view('tourGuide/tambah', $data);
         $this->view('templates/footer');
     }
 
@@ -45,7 +45,7 @@ class tourGuides extends Controller
             exit;
         }
 
-        $data['title'] = "Tour Guide";
+        $data['title'] = "Detail Tour Guide";
         $data['active'] = "tourGuide";
         $data['tourGuide'] = $response['result'];
         $this->view('templates/header', $data);

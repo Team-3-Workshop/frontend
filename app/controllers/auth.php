@@ -97,7 +97,7 @@ class auth extends Controller
     public function reset()
     {
         $data['title'] = "Reset Password";
-        $this->view('auth/reset');
+        $this->view('auth/reset', $data);
     }
 
     public function edit()

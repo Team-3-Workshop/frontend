@@ -17,7 +17,7 @@ if (isset($_SESSION['user'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?= $data['title']; ?></title>
+  <title><?= $data['title']; ?> - Storiatour</title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main/app.css" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main/app-dark.css" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/pages/auth.css" />

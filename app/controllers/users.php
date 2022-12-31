@@ -36,7 +36,7 @@ class users extends Controller
             exit;
         }
 
-        $data['title'] = 'User';
+        $data['title'] = 'Detail User';
         $data['active'] = 'user';
         $data['user'] = $response['result'];
         $this->view('templates/header', $data);

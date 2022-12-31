@@ -18,7 +18,7 @@ class hotels extends Controller
 
         if ($response['code'] == 404) {
             $data['title'] = "404";
-            $data['active'] = 'hotels';
+            $data['active'] = 'hotel';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
             $this->view('404', $data);
@@ -26,7 +26,7 @@ class hotels extends Controller
             exit;
         }
 
-        $data['title'] = 'Hotel';
+        $data['title'] = 'Detail Hotel';
         $data['active'] = 'hotel';
         $data['hotel'] = $response['result'];
         $this->view('templates/header', $data);
@@ -36,10 +36,10 @@ class hotels extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Hotel";
+        $data['title'] = "Create Hotel";
         $data['active'] = 'hotel';
         $this->view('templates/header', $data);
-        $this->view('hotel/tambah');
+        $this->view('hotel/tambah', $data);
         $this->view('templates/footer');
     }
 
@@ -59,7 +59,7 @@ class hotels extends Controller
 
         if ($response['code'] == 404) {
             $data['title'] = "404";
-            $data['active'] = 'hotels';
+            $data['active'] = 'hotel';
             $data['message'] = $response['result']['message'];
             $this->view('templates/header', $data);
             $this->view('404', $data);

@@ -14,7 +14,7 @@ class tours extends Controller
 
     public function tambah()
     {
-        $data['title'] = "Tambah Tour";
+        $data['title'] = "Create Tour";
         $data['active'] = 'tour';
         $data['hotels'] = $this->model('hotelModel')->get();
         $data['transportations'] = $this->model('transportationModel')->get();
@@ -48,7 +48,7 @@ class tours extends Controller
             exit;
         }
 
-        $data['title'] = "Tour";
+        $data['title'] = "Detail Tour";
         $data['active'] = "tour";
         $data['tour'] = $response['result'];
         $this->view("templates/header", $data);

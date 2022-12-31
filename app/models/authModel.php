@@ -94,7 +94,7 @@ class authModel
 
         $fields = [
             'id' => $id,
-            'password' => $password
+            'password' => $password,
         ];
 
         $post = json_encode($fields, true);
