@@ -57,7 +57,7 @@
                     <td class="text-center" colspan="4">Data Not Found</td>
                   </tr>
                 <?php else : ?>
-                  <?php foreach ($data['tourGuides']['data'] as $tourGuide) : ?>
+                  <?php foreach ($data['tourGuides']['data']['rows'] as $tourGuide) : ?>
                     <tr>
                       <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/tourGuides/detail/<?= $tourGuide['id']; ?>"><?= $tourGuide['fullName']; ?></a></td>
                       <td><?= $tourGuide['phone']; ?></td>

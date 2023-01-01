@@ -54,9 +54,13 @@
                     <td class="text-center" colspan="6">Data Not Found</td>
                   </tr>
                 <?php else : ?>
-                  <?php foreach ($data['users']['data'] as $user) : ?>
+                  <?php foreach ($data['users']['data']['rows'] as $user) : ?>
                     <tr>
-                      <td><a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>"><?= $user['fullName']; ?></a></td>
+                      <td>
+                        <a class="fw-bold navbar-brand" href="<?= BASEURL; ?>/users/detail/<?= $user['id']; ?>">
+                          <?= $user['fullName']; ?>
+                        </a>
+                      </td>
                       <td><?= $user['email']; ?></td>
                       <td><?= $user['phone']; ?></td>
                       <td><?= $user['address']; ?></td>

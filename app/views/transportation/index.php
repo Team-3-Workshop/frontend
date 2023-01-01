@@ -1,4 +1,4 @@
-<?php $transportations = $data['transportations']['data']; ?>
+<?php $transportations = $data['transportations']['data']['rows']; ?>
 
 <div class="page-heading">
     <div class="page-title">

@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="row">
-            <?php foreach ($data['hotels']['data'] as $hotel) : ?>
+            <?php foreach ($data['hotels']['data']['rows'] as $hotel) : ?>
                 <div class="col-md-6 col-sm-12">
                     <div class="card shadow rounded">
                         <div class="card-content">
